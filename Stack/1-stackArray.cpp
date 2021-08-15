@@ -5,6 +5,7 @@ using namespace std;
 int stack[MAX_SIZE];
 int top = -1;
 
+
 void push(int data){
     if(top == MAX_SIZE-1){
         cout<<"Stack overflow";
