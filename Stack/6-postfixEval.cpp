@@ -16,10 +16,10 @@ bool isoperator(char c){
 int eval(int op1, int op2,char c){
 
     switch(c){
-        case '+': return op2+op1; 
-        case '-': return op2-op1;
-        case '/': return op2/op1;
-        case '*': return op2*op1;
+        case '+': return op1+op2; 
+        case '-': return op1-op2;
+        case '/': return op1/op2;
+        case '*': return op1*op2;
     
     }
 } 
@@ -34,10 +34,13 @@ int posteval(string s){
             Stack.push((s[i]-'0'));
             continue;
         }
-        int op1 = Stack.top();
-        Stack.pop();
+
         int op2 = Stack.top();
         Stack.pop();
+
+        int op1 = Stack.top();
+        Stack.pop();
+        
         Stack.push(eval(op1,op2,s[i]));
 
     }
